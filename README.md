@@ -1,6 +1,8 @@
 # Basic-File-Encryption-Decryption
 This is a project to help me get ready for Cloud Security (university course). 
 
+Deadline: Two weeks from today: December 15, 2024.
+
 Project Details: Basic File Encryption/Decryption
 Goal:
 Create a program in Java that:
@@ -17,8 +19,7 @@ Skills Covered:
 •	String manipulation.
 •	Loops and conditionals.
 •	Basic command-line interaction (optional).
-Deadline:
-Two weeks from today: December 15, 2024.
+
 Tasks to Complete:
 1.	Day 1-3: Learn or review file handling in Java.
 o	Practice reading and writing text files.
