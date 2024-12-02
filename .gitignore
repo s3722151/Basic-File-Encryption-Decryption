@@ -1,0 +1,29 @@
+# Ignore Eclipse project files
+.project
+.settings/
+
+# Ignore compiled Java files
+*.class
+
+# Ignore log files and temp files
+*.log
+*.tmp
+
+# Ignore IDE specific files
+*.idea/
+*.vscode/
+
+# Ignore Maven or Gradle files if you're using them
+target/
+build/
+
+# Ignore system-specific files (macOS, Windows)
+.DS_Store
+Thumbs.db
+
+
+
+#Why this works:
+#Eclipse files: .project, .classpath, and .settings/ are configuration files created by Eclipse that you usually don’t need to track in Git.
+#Compiled files: Java class files (*.class) are generated when you compile your .java code, so you don’t need to store them in Git.
+#IDE-specific files: Files like .idea/ (for IntelliJ IDEA) or .vscode/ (for Visual Studio Code) are project-specific settings that are not useful for other developers working with the project.
