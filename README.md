@@ -32,3 +32,13 @@ o	Test using small text files.
 4.	Day 11-13: Add a user-friendly menu for interaction.
 o	Let users choose encryption or decryption, input shift key, etc.
 5.	Day 14: Final testing and polish.
+
+
+
+Other NOTES
+src folder:
+
+src stands for source. It's where you put all your Java code (the classes and files you write). When you create a project, Eclipse automatically creates a src folder to organize your code.
+JRE System Library:
+
+JRE stands for Java Runtime Environment. It's a set of tools and libraries that Java needs to run your programs. The JRE System Library in Eclipse lets your project use these tools so you can run your Java code. It includes things like basic math functions, input/output handling, and more.
