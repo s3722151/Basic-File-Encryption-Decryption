@@ -1,18 +1,33 @@
 package encryptionProject;
 import java.util.Scanner;  // https://www.w3schools.com/java/java_user_input.asp
 import java.io.File;  // Import the File class
+import java.io.FileNotFoundException;  // Import this class to handle errors
 
 public class encryption {
 	   public static void main(String[] args) {
 	        System.out.println("Select the file do you want to encrypt or decrypt.");
             //Step 1: Take User input
             //Find the file path of the file 
+	        
             //Ask for a encryption key - number of characters shifted e.g. 3
+		        System.out.println("Specify number for shifting characters. E.g. if 3, house will become krxvh");
+		        Scanner myObj = new Scanner(System.in); //Create a scanner to store input for how many characters they want to shift
+		        int shiftKeys = myObj.nextInt();
 	        
-	        //Step 2: Read the input file 
+	        //Step 2: Read the input file: https://www.w3schools.com/java/java_files_read.asp
+//	        try {
+//	            File readObj = new File("filename.txt");
+//	            Scanner myReader = new Scanner(readObj);
+//	            while (myReader.hasNextLine()) {
+//	              String fileText = myReader.nextLine();
+//	              System.out.println(fileText);
+//	            }
+//	            myReader.close();
+//	          } catch (FileNotFoundException e) {
+//	            System.out.println("An error occurred.");
+//	            e.printStackTrace();
+//	          }
 	        
-	        //Create a scanner to store user input
-	        Scanner myObj = new Scanner(System.in); // Create a Scanner object 
 	        //Variable to track if we have encrypted the file
 	        boolean encodedState = false; 
 	        
