@@ -8,6 +8,7 @@ public class encryption {
 	        System.out.println("Select the file do you want to encrypt or decrypt.");
             //Step 1: Take User input
             //Find the file path of the file 
+	        	//Do this next - select a file : https://youtu.be/gMVkp8108f0
 	        
             //Ask for a encryption key - number of characters shifted e.g. 3
 		        System.out.println("Specify number for shifting characters. E.g. if 3, house will become krxvh");
