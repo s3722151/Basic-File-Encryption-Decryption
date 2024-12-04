@@ -42,3 +42,17 @@ src stands for source. It's where you put all your Java code (the classes and fi
 JRE System Library:
 
 JRE stands for Java Runtime Environment. It's a set of tools and libraries that Java needs to run your programs. The JRE System Library in Eclipse lets your project use these tools so you can run your Java code. It includes things like basic math functions, input/output handling, and more.
+
+
+DIARY LOG
+1/12/2024
+Started the project - created the repository.
+
+2/12/2024
+Was diagnosing how to clone the repository from remote to local.
+- Had to update the java JDK
+- Had to change the workspace
+- Had to update the GIT extension
+
+3/4/2024
+Made the menu. Just copied code from previous project.
