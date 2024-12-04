@@ -56,3 +56,6 @@ Was diagnosing how to clone the repository from remote to local.
 
 3/4/2024
 Made the menu. Just copied code from previous project.
+
+4/4/2024
+Trying to clarify the steps of the project.

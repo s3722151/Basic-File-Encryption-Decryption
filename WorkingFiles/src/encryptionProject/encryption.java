@@ -3,21 +3,20 @@ import java.util.Scanner;  // https://www.w3schools.com/java/java_user_input.asp
 
 public class encryption {
 	   public static void main(String[] args) {
-	        System.out.println("Please enter a value. E.g.'Hello World'");
-	        Scanner myObj = new Scanner(System.in); // Create a Scanner object
-
-	        // Step 1: User enters a value
-	        String userName = myObj.nextLine(); // Read user input        
+	        System.out.println("Do you want to encrypt or decrypt a file?'");
+	        
+	        //Step 1: Create a scanner to store user input
+	        Scanner myObj = new Scanner(System.in); // Create a Scanner object 
 
 	        // Step 2: Initialize variables
 	        boolean encodedState = false; // To track if the string is encodedState
 	        
 
 	        while (true) { // Loop until the user chooses to exit
-	            System.out.println("What you entered as a value is: " + userName);
+	            System.out.println("What you entered as a value is: ");
 	            System.out.println("The Status of the encodedState is:" +encodedState);
-	            System.out.println("Press 1 to encode the string");
-	            System.out.println("Press 2 to decode the string");
+	            System.out.println("Press 1 to encode the file");
+	            System.out.println("Press 2 to decode the file");
 	            System.out.println("Press 3 to exit the program");
 
 	            int optionChosen = -1; // Default invalid option
@@ -35,7 +34,7 @@ public class encryption {
 	                    if (!encodedState) {
 	                        System.out.println("Entered 1: You want to encode the string");
 
-	                        System.out.println("The encoded string is: " + userName);
+	                        System.out.println("The encoded string is: ");
 	                        encodedState = true;
 	                    } else {
 	                        System.out.println("You cannot encode as it is already encodedState.");
@@ -46,7 +45,7 @@ public class encryption {
 	                    if (encodedState) {
 	                        System.out.println("You chose to decode the string.");	
 
-	                        System.out.println("The decoded value is: " + userName);
+	                        System.out.println("The decoded value is: " );
 	                        encodedState = false; // Mark as decoded
 	                        
 	                    } else {
