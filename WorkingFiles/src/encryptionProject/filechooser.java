@@ -26,6 +26,11 @@ public class filechooser {
 
 
 /*
+What this tutorial does
+- It a file name.
+- Issue it does not save path directory 
+
+
 What is file chooser:
 https://www.javatpoint.com/java-jfilechooser#:~:text=JFileChooser%20is%20a%20class%20that,%2C%20panels%2C%20dialogs%2C%20etc. 
  */
