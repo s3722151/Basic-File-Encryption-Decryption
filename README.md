@@ -59,3 +59,7 @@ Made the menu. Just copied code from previous project.
 
 4/4/2024
 Trying to clarify the steps of the project.
+
+5/4/2024 
+Realised I should get the filePath based on specifying user input: 
+https://stackoverflow.com/questions/13509822/get-the-filepath-from-filename-using-java

@@ -5,11 +5,14 @@ import java.io.FileNotFoundException;  // Import this class to handle errors
 
 public class encryption {
 	   public static void main(String[] args) {
+           //Step 1: Take User input
 	        System.out.println("Select the file do you want to encrypt or decrypt.");
-            //Step 1: Take User input
+	        
+	        System.out.println("What file do you want to encrypt or decrypt?");
             //Find the file path of the file 
-	        	//Do this next - select a file : https://youtu.be/gMVkp8108f0
-	        		//oNLY GETS THE FILE
+	        	//Do this next - select a file : https://stackoverflow.com/questions/13509822/get-the-filepath-from-filename-using-java
+
+	        		//oNLY GETS THE FILE: https://youtu.be/gMVkp8108f0
 	        //tRY THIS NEXT https://www.youtube.com/watch?v=A6sA9KItwpY
 	        
             //Ask for a encryption key - number of characters shifted e.g. 3
@@ -92,3 +95,11 @@ public class encryption {
 	    }
 
 }
+
+/* 
+REFERENCES
+
+//Step 1: Take User input
+//Find the file path of the file 
+		//Only gets the file: https://youtu.be/gMVkp8108f0
+ */
