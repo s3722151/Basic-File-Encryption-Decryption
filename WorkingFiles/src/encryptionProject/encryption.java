@@ -9,6 +9,8 @@ public class encryption {
             //Step 1: Take User input
             //Find the file path of the file 
 	        	//Do this next - select a file : https://youtu.be/gMVkp8108f0
+	        		//oNLY GETS THE FILE
+	        //tRY THIS NEXT https://www.youtube.com/watch?v=A6sA9KItwpY
 	        
             //Ask for a encryption key - number of characters shifted e.g. 3
 		        System.out.println("Specify number for shifting characters. E.g. if 3, house will become krxvh");
