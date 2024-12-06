@@ -5,23 +5,40 @@ import java.io.FileNotFoundException;  // Import this class to handle errors
 
 public class encryption {
 	   public static void main(String[] args) {
-           //Step 1: Take User input
-	        System.out.println("Do you want to encrypt or decrypt?");
-	        Scanner test = new Scanner(System.in); //Create a scanner to store input for how many characters they want to shift
-	        String encryptionOption = test.nextLine();
+           //Step 1: Take User input	        
+	        Scanner myObj = new Scanner(System.in); //Create a scanner to store input for how many characters they want to shift
+	        Scanner encryptionPreference = new Scanner(System.in);
+	        Scanner test = new Scanner(System.in);
+	        Scanner shiftKeysStorage = new Scanner(System.in);
+	        boolean encryptionCheck = false;
+	        boolean selectFileCheck = false;
+	        boolean shiftKeyCheck = false;
 	        
+	        while (!encryptionCheck) {
+	            System.out.println("Press 1 to encrypt or press 2 to encrypt");
+		        try {
+		        	int encryptionOption = encryptionPreference.nextInt();
+		        	encryptionCheck = true;
+		        } catch (Exception e) {
+		            System.out.println("You entered a wrong value. Only enter 1 or 2.");
+		            encryptionPreference.nextInt();
+		        }	        	
+	        }	
+	        	        
 	        System.out.println("What file do you want to encrypt or decrypt?");
-	        String selectFile = test.nextLine();
-            //Find the file path of the file 
-	        	//Do this next - select a file : https://stackoverflow.com/questions/13509822/get-the-filepath-from-filename-using-java
-
-	        		//oNLY GETS THE FILE: https://youtu.be/gMVkp8108f0
-	        //tRY THIS NEXT https://www.youtube.com/watch?v=A6sA9KItwpY
-	        
-            //Ask for a encryption key - number of characters shifted e.g. 3
-		        System.out.println("Specify number for shifting characters. E.g. if 3, house will become krxvh");
-		        Scanner myObj = new Scanner(System.in); //Create a scanner to store input for how many characters they want to shift
-		        int shiftKeys = myObj.nextInt();
+	        try {
+		        String selectFile = test.nextLine();
+	        } catch (Exception e) {
+	            System.out.println("You entered a wrong value - second line");
+	        }
+	        	        
+	        System.out.println("Specify number for shifting characters. E.g. if 3, house will become krxvh");
+	        try {
+	        	int shiftKeys = shiftKeysStorage.nextInt();
+	        } catch (Exception e) {
+	            System.out.println("You entered a wrong value - second line");
+	        }
+	        	     
 	        
 	        //Step 2: Read the input file: https://www.w3schools.com/java/java_files_read.asp
 //	        try {
