@@ -63,3 +63,6 @@ Trying to clarify the steps of the project.
 5/4/2024 
 Realised I should get the filePath based on specifying user input: 
 https://stackoverflow.com/questions/13509822/get-the-filepath-from-filename-using-java
+
+6/12/2024
+I am kinda stuck on getting different user inputs. 
