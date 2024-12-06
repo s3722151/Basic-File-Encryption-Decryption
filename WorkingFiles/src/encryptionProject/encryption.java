@@ -6,9 +6,12 @@ import java.io.FileNotFoundException;  // Import this class to handle errors
 public class encryption {
 	   public static void main(String[] args) {
            //Step 1: Take User input
-	        System.out.println("Select the file do you want to encrypt or decrypt.");
+	        System.out.println("Do you want to encrypt or decrypt?");
+	        Scanner test = new Scanner(System.in); //Create a scanner to store input for how many characters they want to shift
+	        String encryptionOption = test.nextLine();
 	        
 	        System.out.println("What file do you want to encrypt or decrypt?");
+	        String selectFile = test.nextLine();
             //Find the file path of the file 
 	        	//Do this next - select a file : https://stackoverflow.com/questions/13509822/get-the-filepath-from-filename-using-java
 
