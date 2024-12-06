@@ -8,8 +8,9 @@ public class encryption {
            //Step 1: Take User input	        
 	        Scanner myObj = new Scanner(System.in); //Create a scanner to store input for how many characters they want to shift
 	        Scanner encryptionPreference = new Scanner(System.in);
-	        Scanner test = new Scanner(System.in);
+	        Scanner selectFileStorage = new Scanner(System.in);
 	        Scanner shiftKeysStorage = new Scanner(System.in);
+	        
 	        boolean encryptionCheck = false;
 	        boolean selectFileCheck = false;
 	        boolean shiftKeyCheck = false;
@@ -18,28 +19,61 @@ public class encryption {
 	            System.out.println("Press 1 to encrypt or press 2 to encrypt");
 		        try {
 		        	int encryptionOption = encryptionPreference.nextInt();
+		        	
+		        	if (encryptionOption == 1) {
+		        	System.out.println("You have selected 1 - Encryption.");
 		        	encryptionCheck = true;
+		        	}
+		        	else if (encryptionOption == 2) {
+		        	System.out.println("You have selected 2 - Decryption.");
+		        	encryptionCheck = true;
+		        	}
+		        	else {
+	                    System.out.println("Invalid choice. Please enter 1 or 2.");
+	                }
+		        	
 		        } catch (Exception e) {
 		            System.out.println("You entered a wrong value. Only enter 1 or 2.");
-		            encryptionPreference.nextInt();
+		            encryptionPreference.next(); // Clear invalid input
 		        }	        	
 	        }	
-	        	        
-	        System.out.println("What file do you want to encrypt or decrypt?");
-	        try {
-		        String selectFile = test.nextLine();
-	        } catch (Exception e) {
-	            System.out.println("You entered a wrong value - second line");
-	        }
-	        	        
-	        System.out.println("Specify number for shifting characters. E.g. if 3, house will become krxvh");
-	        try {
-	        	int shiftKeys = shiftKeysStorage.nextInt();
-	        } catch (Exception e) {
-	            System.out.println("You entered a wrong value - second line");
-	        }
-	        	     
 	        
+	        String selectFile = "";
+	        while (!selectFileCheck) {
+		        System.out.println("What file do you want to encrypt or decrypt?");
+		        try {
+			        selectFile = selectFileStorage.nextLine();
+			        if (!selectFile.isEmpty()) {
+	                    System.out.println("You selected the file: " + selectFile);
+	                    selectFileCheck = true;
+	                } 
+			        else {
+	                    System.out.println("File name cannot be empty. Please try again.");
+	                }
+		        } catch (Exception e) {
+		            System.out.println("You entered a wrong value. Please try again - second line");
+		        }	        	
+	        }
+	        
+	        int shiftKeys = 0;
+	        while (!shiftKeyCheck) {
+		        System.out.println("Specify number for shifting characters. E.g. if 3, house will become krxvh");
+		        try {
+		        	shiftKeys = shiftKeysStorage.nextInt();
+	                if (shiftKeys > 0) {
+	                    System.out.println("You selected a shift key of: " + shiftKeys);
+	                    shiftKeyCheck = true;
+	                } else {
+	                    System.out.println("Shift key must be a positive integer. Please try again.");
+	                }
+		        } catch (Exception e) {
+		            System.out.println("You entered a wrong value - second line");
+		            shiftKeysStorage.nextInt();
+		        }	        	
+	        }
+
+	        	        
+ 
 	        //Step 2: Read the input file: https://www.w3schools.com/java/java_files_read.asp
 //	        try {
 //	            File readObj = new File("filename.txt");
