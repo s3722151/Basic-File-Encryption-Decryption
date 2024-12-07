@@ -66,3 +66,8 @@ https://stackoverflow.com/questions/13509822/get-the-filepath-from-filename-usin
 
 6/12/2024
 I am kinda stuck on getting different user inputs. 
+Fixed it. I had the idea of using a while loop and using multiple scanner objects.
+
+7/12/2024
+Kinda tired. I still feel like specifying the file path would be more better than letting a user type a file. 
+
