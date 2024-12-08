@@ -2,6 +2,8 @@ package encryptionProject;
 import java.util.Scanner;  // https://www.w3schools.com/java/java_user_input.asp
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
+import java.io.IOException;
+import java.io.FileWriter;   // Import the FileWriter class
 
 
 public class encryption {
@@ -12,7 +14,7 @@ public class encryption {
 	        Scanner selectFileStorage = new Scanner(System.in);
 	        Scanner shiftKeysStorage = new Scanner(System.in);
 	        
-	        boolean encryptionCheck = false;
+	        boolean encryptionCheck = false; // Check for each input
 	        boolean selectFileCheck = false;
 	        boolean shiftKeyCheck = false;
 	        
@@ -98,14 +100,37 @@ public class encryption {
 	        //Step 3 Encryption 
 	        //https://www.baeldung.com/java-caesar-cipher
 	        
-	        //Step 4: Saving and writing to a file: https://www.w3schools.com/java/java_files_create.asp
+	        //Step 4 Create a new file: https://www.w3schools.com/java/java_files_create.asp
+	        try {
+	            File saveObj = new File("C:\\Users\\JC\\Documents\\Programming Projects\\Basic-File-Encryption-Decryption\\files\\encrypted.txt");
+	            if (saveObj.createNewFile()) {
+	              System.out.println("File created: " + saveObj.getName());
+	            } else {
+	              System.out.println("File already exists.");
+	            }
+	          } catch (IOException e) {
+	            System.out.println("An error occurred. The file could not be created.");
+	            e.printStackTrace();
+	          }
 	        
-	        
+	        //Step 5: Write to the file: https://www.w3schools.com/java/java_files_create.asp
+	        try {
+	        	//("C:\\Users\\JC\\Documents\\Programming Projects\\Basic-File-Encryption-Decryption\\files\\filename.txt");
+	            FileWriter myWriter = new FileWriter("C:\\Users\\JC\\Documents\\Programming Projects\\Basic-File-Encryption-Decryption\\files\\encrypted.txt.txt");
+	            myWriter.write("Files in Java might be tricky, but it is fun enough!"); //Replace this with the encryption method in step 3. This needs to be appended.
+	            myWriter.close();
+	            System.out.println("Successfully wrote to the file.");
+	          } catch (IOException e) {
+	            System.out.println("An error occurred. The file could not be written to.");
+	            e.printStackTrace();
+	          }
+
+	    } // End of public statement
+
+} //End of class
 
 
-	    }
 
-}
 
 /* 
 REFERENCES
@@ -113,4 +138,7 @@ REFERENCES
 //Step 1: Take User input
 //Find the file path of the file 
 		//Only gets the file: https://youtu.be/gMVkp8108f0
+
+Step 5:
+Not using absolute paths: https://stackoverflow.com/questions/63618663/java-using-relative-path-instead-of-absolute-path
  */
