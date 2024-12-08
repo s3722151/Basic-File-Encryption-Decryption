@@ -107,14 +107,14 @@ public class encryption {
 	            System.out.println("An error occurred. Could not find the file that was entered.");
 	            e.printStackTrace();
 	          }
-	        
 	        //OR: https://www.javatpoint.com/how-to-open-a-file-in-java
-	        
-	        
+	        	        
 	        //Variable to track if we have encrypted the file
 	        boolean encodedState = false; 
 	        
 	        //Step 3 Encryption: https://www.baeldung.com/java-caesar-cipher
+	        //https://www.geeksforgeeks.org/java-program-to-modify-a-string-by-performing-given-shift-operations/
+	        //DO THIS BUT ENCODE  a for loop
 	        
 	        //Step 4 Create a new file: https://www.w3schools.com/java/java_files_create.asp
 	        breakLineMethod();
