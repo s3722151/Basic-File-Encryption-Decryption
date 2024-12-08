@@ -138,6 +138,7 @@ public class encryption {
 	            myWriter.write("Files in Java might be tricky, but it is fun enough!"); //Replace this with the encryption method in step 3. This needs to be appended.
 	            myWriter.close();
 	            System.out.println("Successfully wrote to the file.");
+	            System.out.println("Program is now finished.");
 	          } catch (IOException e) {
 	            System.out.println("An error occurred. The file could not be written to.");
 	            e.printStackTrace();
