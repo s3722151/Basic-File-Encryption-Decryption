@@ -6,7 +6,19 @@ import java.io.IOException;
 import java.io.FileWriter;   // Import the FileWriter class
 
 
+
+
 public class encryption {
+	
+	   //METHODS
+	   static void encryptionMethod() {
+		   //Place encryption code here 
+	   }
+	   
+	   static void decryptionMethod() {
+		   //Place de-cryption code here		   
+	   }
+	
 	   public static void main(String[] args) {
            //Step 1: Take User input	        
 	        Scanner myObj = new Scanner(System.in); //Create a scanner to store input for how many characters they want to shift
@@ -97,8 +109,7 @@ public class encryption {
 	        //Variable to track if we have encrypted the file
 	        boolean encodedState = false; 
 	        
-	        //Step 3 Encryption 
-	        //https://www.baeldung.com/java-caesar-cipher
+	        //Step 3 Encryption: https://www.baeldung.com/java-caesar-cipher
 	        
 	        //Step 4 Create a new file: https://www.w3schools.com/java/java_files_create.asp
 	        try {
@@ -127,14 +138,7 @@ public class encryption {
 
 	    } // End of MAIN method
 	   
-	   static void encryptionMethod() {
-		   //Place encryption code here 
-	   }
-	   
-	   static void decryptionMethod() {
-		   //Place de-cryption code here
-		   
-	   }
+
 
 
 } //End of class
