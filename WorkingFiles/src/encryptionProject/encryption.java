@@ -125,7 +125,17 @@ public class encryption {
 	            e.printStackTrace();
 	          }
 
-	    } // End of public statement
+	    } // End of MAIN method
+	   
+	   static void encryptionMethod() {
+		   //Place encryption code here 
+	   }
+	   
+	   static void decryptionMethod() {
+		   //Place de-cryption code here
+		   
+	   }
+
 
 } //End of class
 
