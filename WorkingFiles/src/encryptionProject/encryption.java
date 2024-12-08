@@ -11,6 +11,9 @@ import java.io.FileWriter;   // Import the FileWriter class
 public class encryption {
 	
 	   //METHODS
+	   static void breakLineMethod() {
+		   System.out.println("---------------------------------------------------------------------------------------");
+	   }
 	   static void encryptionMethod() {
 		   //Place encryption code here 
 	   }
@@ -53,6 +56,7 @@ public class encryption {
 		        }	        	
 	        }	
 	        
+	        breakLineMethod();
 	        String selectFile = "";
 	        while (!selectFileCheck) {
 		        System.out.println("What file do you want to encrypt or decrypt?");
@@ -70,6 +74,7 @@ public class encryption {
 		        }	        	
 	        }
 	        
+	        breakLineMethod();
 	        int shiftKeys = 0;
 	        while (!shiftKeyCheck) {
 		        System.out.println("Specify number for shifting characters. E.g. if 3, house will become krxvh");
@@ -88,20 +93,20 @@ public class encryption {
 	        }
 
 	        	        
- 
+	        breakLineMethod();
 	        //Step 2: Read the input file: https://www.w3schools.com/java/java_files_read.asp
-//	        try {
-//	            File readObj = new File("filename.txt");
-//	            Scanner myReader = new Scanner(readObj);
-//	            while (myReader.hasNextLine()) {
-//	              String fileText = myReader.nextLine();
-//	              System.out.println(fileText);
-//	            }
-//	            myReader.close();
-//	          } catch (FileNotFoundException e) {
-//	            System.out.println("An error occurred.");
-//	            e.printStackTrace();
-//	          }
+	        try {
+	            File readObj = new File("C:\\Users\\JC\\Documents\\Programming Projects\\Basic-File-Encryption-Decryption\\files\\" + selectFile);
+	            Scanner myReader = new Scanner(readObj);
+	            while (myReader.hasNextLine()) {
+	              String fileText = myReader.nextLine();
+	              System.out.println(fileText);
+	            }
+	            myReader.close();
+	          } catch (FileNotFoundException e) {
+	            System.out.println("An error occurred. Could not find the file that was entered.");
+	            e.printStackTrace();
+	          }
 	        
 	        //OR: https://www.javatpoint.com/how-to-open-a-file-in-java
 	        
@@ -112,6 +117,7 @@ public class encryption {
 	        //Step 3 Encryption: https://www.baeldung.com/java-caesar-cipher
 	        
 	        //Step 4 Create a new file: https://www.w3schools.com/java/java_files_create.asp
+	        breakLineMethod();
 	        try {
 	            File saveObj = new File("C:\\Users\\JC\\Documents\\Programming Projects\\Basic-File-Encryption-Decryption\\files\\encrypted.txt");
 	            if (saveObj.createNewFile()) {
@@ -125,6 +131,7 @@ public class encryption {
 	          }
 	        
 	        //Step 5: Write to the file: https://www.w3schools.com/java/java_files_create.asp
+	        breakLineMethod();
 	        try {
 	        	//("C:\\Users\\JC\\Documents\\Programming Projects\\Basic-File-Encryption-Decryption\\files\\filename.txt");
 	            FileWriter myWriter = new FileWriter("C:\\Users\\JC\\Documents\\Programming Projects\\Basic-File-Encryption-Decryption\\files\\encrypted.txt.txt");
