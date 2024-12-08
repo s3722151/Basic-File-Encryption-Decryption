@@ -134,7 +134,7 @@ public class encryption {
 	        breakLineMethod();
 	        try {
 	        	//("C:\\Users\\JC\\Documents\\Programming Projects\\Basic-File-Encryption-Decryption\\files\\filename.txt");
-	            FileWriter myWriter = new FileWriter("C:\\Users\\JC\\Documents\\Programming Projects\\Basic-File-Encryption-Decryption\\files\\encrypted.txt.txt");
+	            FileWriter myWriter = new FileWriter("C:\\Users\\JC\\Documents\\Programming Projects\\Basic-File-Encryption-Decryption\\files\\encrypted.txt");
 	            myWriter.write("Files in Java might be tricky, but it is fun enough!"); //Replace this with the encryption method in step 3. This needs to be appended.
 	            myWriter.close();
 	            System.out.println("Successfully wrote to the file.");
