@@ -6,8 +6,6 @@ import java.io.IOException;
 import java.io.FileWriter;   // Import the FileWriter class
 
 
-
-
 public class encryption {
 	
 	   //METHODS
@@ -21,6 +19,25 @@ public class encryption {
 	   static void decryptionMethod() {
 		   //Place de-cryption code here		   
 	   }
+	   //https://www.youtube.com/watch?v=soEQI-aUWGo
+	   public static String encrypt(String fileText, int shift) 
+	   {
+		   StringBuilder encryptedMessage = new StringBuilder();
+		   fileText = fileText.toLowerCase();
+		   
+		   for (int i = 0; i < fileText.length(); i++) 
+		   {
+			   char c = fileText.charAt(i);
+			   if (Character.isLetter(c)) 
+			   {
+				   //Explanation:https://youtu.be/soEQI-aUWGo?t=194   
+				   c = (char)((c - 'a' + shift + 26 ) % 26 + 'a');
+			   }
+			   encryptedMessage.append(c);     
+		   }
+		  return encryptedMessage.toString();
+	   }
+	   
 	
 	   public static void main(String[] args) {
            //Step 1: Take User input	        
@@ -92,17 +109,17 @@ public class encryption {
 		        }	        	
 	        }
 
-	        	        
+	        String fileText = "";	        
 	        breakLineMethod();
 	        //Step 2: Read the input file: https://www.w3schools.com/java/java_files_read.asp
 	        try {
 	            File readObj = new File("C:\\Users\\JC\\Documents\\Programming Projects\\Basic-File-Encryption-Decryption\\files\\" + selectFile);
 	            Scanner myReader = new Scanner(readObj);
 	            while (myReader.hasNextLine()) {
-	              String fileText = myReader.nextLine();
+	              fileText = myReader.nextLine();
 	              System.out.println(fileText);
 	            }
-	            myReader.close();
+	            //myReader.close();
 	          } catch (FileNotFoundException e) {
 	            System.out.println("An error occurred. Could not find the file that was entered.");
 	            e.printStackTrace();
@@ -113,8 +130,12 @@ public class encryption {
 	        boolean encodedState = false; 
 	        
 	        //Step 3 Encryption: https://www.baeldung.com/java-caesar-cipher
-	        //https://www.geeksforgeeks.org/java-program-to-modify-a-string-by-performing-given-shift-operations/
-	        //DO THIS BUT ENCODE  a for loop
+	        //https://www.youtube.com/watch?v=soEQI-aUWGo
+	        String encryptedMessage = encrypt(fileText, shiftKeys);
+	        System.out.println("Encrypted message is as follows:" + encryptedMessage);
+	        
+	        //Decryption: https://www.youtube.com/watch?v=ZNRd_Yb9Ujw
+	        
 	        
 	        //Step 4 Create a new file: https://www.w3schools.com/java/java_files_create.asp
 	        breakLineMethod();
@@ -135,7 +156,7 @@ public class encryption {
 	        try {
 	        	//("C:\\Users\\JC\\Documents\\Programming Projects\\Basic-File-Encryption-Decryption\\files\\filename.txt");
 	            FileWriter myWriter = new FileWriter("C:\\Users\\JC\\Documents\\Programming Projects\\Basic-File-Encryption-Decryption\\files\\encrypted.txt");
-	            myWriter.write("Files in Java might be tricky, but it is fun enough!"); //Replace this with the encryption method in step 3. This needs to be appended.
+	            myWriter.write(encryptedMessage); //Replace this with the encryption method in step 3. This needs to be appended.
 	            myWriter.close();
 	            System.out.println("Successfully wrote to the file.");
 	            System.out.println("Program is now finished.");
@@ -160,6 +181,10 @@ REFERENCES
 //Step 1: Take User input
 //Find the file path of the file 
 		//Only gets the file: https://youtu.be/gMVkp8108f0
+Step 3
+This was my original idea:
+https://www.geeksforgeeks.org/java-program-to-modify-a-string-by-performing-given-shift-operations/
+- Scrapped as it you needed to manually specify the shift. 
 
 Step 5:
 Not using absolute paths: https://stackoverflow.com/questions/63618663/java-using-relative-path-instead-of-absolute-path
