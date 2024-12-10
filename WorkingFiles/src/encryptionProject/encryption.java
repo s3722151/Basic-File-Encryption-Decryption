@@ -129,8 +129,8 @@ public class encryption {
 	        //Variable to track if we have encrypted the file
 	        boolean encodedState = false; 
 	        
-	        //Step 3 Encryption: https://www.baeldung.com/java-caesar-cipher
-	        //https://www.youtube.com/watch?v=soEQI-aUWGo
+	        //Step 3 Encryption: https://www.youtube.com/watch?v=soEQI-aUWGo 
+	        //Explanation: https://www.baeldung.com/java-caesar-cipher
 	        String encryptedMessage = encrypt(fileText, shiftKeys);
 	        System.out.println("Encrypted message is as follows:" + encryptedMessage);
 	        
