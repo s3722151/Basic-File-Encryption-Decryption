@@ -80,3 +80,5 @@ Added the encryption method
 
 10/12/2024
 Added the decryption method.
+Created and moved the decryption and encryption main method code in a while statement. 
+This ensures it is only executed based on step 2.
