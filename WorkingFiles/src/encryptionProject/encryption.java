@@ -145,7 +145,6 @@ public class encryption {
 	        //Step 3.1  Encryption: https://www.youtube.com/watch?v=soEQI-aUWGo 
 	        while (!thirdStage) {
 		        try {
-		        	
 		        	if (encryptionOption == 1) {
 			        	System.out.println("Now proceeding to do the following - Encryption.");
 				        String encryptedMessage = encrypt(fileText, shiftKeys);
@@ -184,7 +183,7 @@ public class encryption {
 			        	System.out.println("Now proceeding to do the following - Decryption.");
 				        //3.2 De-cryption: https://www.youtube.com/watch?v=ZNRd_Yb9Ujw
 				        String decryptedMessage = decrypt(fileText, shiftKeys);
-				        System.out.println("decrypted message is as follows:" + decryptedMessage );
+				        System.out.println("Decrypted message is as follows:" + decryptedMessage );
 				        
 				        //Step 4.2
 				        breakLineMethod();
