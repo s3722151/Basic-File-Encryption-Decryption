@@ -8,18 +8,12 @@ import java.io.FileWriter;   // Import the FileWriter class
 
 public class encryption {
 	
-	   //METHODS
+//METHODS
 	   static void breakLineMethod() {
 		   System.out.println("---------------------------------------------------------------------------------------");
 	   }
-	   static void encryptionMethod() {
-		   //Place encryption code here 
-	   }
 	   
-	   static void decryptionMethod() {
-		   //Place de-cryption code here		   
-	   }
-	   //https://www.youtube.com/watch?v=soEQI-aUWGo
+	   //Encryption Method - https://www.youtube.com/watch?v=soEQI-aUWGo
 	   public static String encrypt(String fileText, int shift) 
 	   {
 		   StringBuilder encryptedMessage = new StringBuilder();
@@ -38,7 +32,25 @@ public class encryption {
 		  return encryptedMessage.toString();
 	   }
 	   
-	
+	   //Decryption Method 
+	   public static String decrypt(String fileText, int shift) 
+	   {
+		   StringBuilder decryptedMessage = new StringBuilder();
+		   for (int i = 0; i < fileText.length(); i++) 
+		   {
+			   char c = fileText.charAt(i); //Get character at current index, string is just a character array
+			   if (Character.isLetter(c)) //Check if a letter
+			   {
+				   //Explanation:https://youtu.be/ZNRd_Yb9Ujw?t=169  
+				   c = (char)((c - 'a' - shift + 26 ) % 26 + 'a');
+				   //We add 26 to ensure it is always positive
+			   }
+			   decryptedMessage.append(c);     
+		   }
+		   return decryptedMessage.toString();
+	   }
+	   
+//MAIN METHOD	   
 	   public static void main(String[] args) {
            //Step 1: Take User input	        
 	        Scanner myObj = new Scanner(System.in); //Create a scanner to store input for how many characters they want to shift
@@ -129,15 +141,11 @@ public class encryption {
 	        //Variable to track if we have encrypted the file
 	        boolean encodedState = false; 
 	        
-	        //Step 3 Encryption: https://www.youtube.com/watch?v=soEQI-aUWGo 
-	        //Explanation: https://www.baeldung.com/java-caesar-cipher
+	        //Step 3.1  Encryption: https://www.youtube.com/watch?v=soEQI-aUWGo 
 	        String encryptedMessage = encrypt(fileText, shiftKeys);
-	        System.out.println("Encrypted message is as follows:" + encryptedMessage);
+	        System.out.println("Encrypted message is as follows:" + encryptedMessage);    
 	        
-	        //Decryption: https://www.youtube.com/watch?v=ZNRd_Yb9Ujw
-	        
-	        
-	        //Step 4 Create a new file: https://www.w3schools.com/java/java_files_create.asp
+	        //Step 4.1  Create a new file: https://www.w3schools.com/java/java_files_create.asp
 	        breakLineMethod();
 	        try {
 	            File saveObj = new File("C:\\Users\\JC\\Documents\\Programming Projects\\Basic-File-Encryption-Decryption\\files\\encrypted.txt");
@@ -151,7 +159,7 @@ public class encryption {
 	            e.printStackTrace();
 	          }
 	        
-	        //Step 5: Write to the file: https://www.w3schools.com/java/java_files_create.asp
+	        //Step 5.1 : Write to the file: https://www.w3schools.com/java/java_files_create.asp
 	        breakLineMethod();
 	        try {
 	        	//("C:\\Users\\JC\\Documents\\Programming Projects\\Basic-File-Encryption-Decryption\\files\\filename.txt");
@@ -164,6 +172,9 @@ public class encryption {
 	            System.out.println("An error occurred. The file could not be written to.");
 	            e.printStackTrace();
 	          }
+	        
+	        //3.2 De-cryption: https://www.youtube.com/watch?v=ZNRd_Yb9Ujw
+	        String decryptedMessage = decrypt(fileText, shiftKeys);
 
 	    } // End of MAIN method
 	   
@@ -182,6 +193,9 @@ REFERENCES
 //Find the file path of the file 
 		//Only gets the file: https://youtu.be/gMVkp8108f0
 Step 3
+Explains the entire process of Caeser Cipher: https://www.youtube.com/watch?v=P0zMXEUvF78
+	Encryption method: https://www.baeldung.com/java-caesar-cipher
+
 This was my original idea:
 https://www.geeksforgeeks.org/java-program-to-modify-a-string-by-performing-given-shift-operations/
 - Scrapped as it you needed to manually specify the shift. 

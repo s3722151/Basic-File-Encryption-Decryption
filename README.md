@@ -75,3 +75,8 @@ Kinda tired. I still feel like specifying the file path would be more better tha
 Found this helpful: https://www.javatpoint.com/how-to-open-a-file-in-java
 Deleting the menu as it was optional and wasn't needed. 
 
+9/12/2024
+Added the encryption method
+
+10/12/2024
+Added the decryption method.
