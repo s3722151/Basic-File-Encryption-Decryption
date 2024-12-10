@@ -61,11 +61,14 @@ public class encryption {
 	        boolean encryptionCheck = false; // Check for each input
 	        boolean selectFileCheck = false;
 	        boolean shiftKeyCheck = false;
+	        boolean thirdStage = false;
+	        
+	        int encryptionOption = 0;
 	        
 	        while (!encryptionCheck) {
 	            System.out.println("Press 1 to encrypt or press 2 to encrypt");
 		        try {
-		        	int encryptionOption = encryptionPreference.nextInt();
+		        	encryptionOption = encryptionPreference.nextInt();
 		        	
 		        	if (encryptionOption == 1) {
 		        	System.out.println("You have selected 1 - Encryption.");
@@ -137,11 +140,36 @@ public class encryption {
 	            e.printStackTrace();
 	          }
 	        //OR: https://www.javatpoint.com/how-to-open-a-file-in-java
-	        	        
-	        //Variable to track if we have encrypted the file
-	        boolean encodedState = false; 
+	        	    
 	        
 	        //Step 3.1  Encryption: https://www.youtube.com/watch?v=soEQI-aUWGo 
+	        while (!thirdStage) {
+	            System.out.println("Press 1 to encrypt or press 2 to encrypt");
+		        try {
+		        	
+		        	if (encryptionOption == 1) {
+		        	System.out.println("Now proceeding to do the following - Encryption.");
+		        	thirdStage = true;
+		        	}
+		        	else if (encryptionOption == 2) {
+		        	System.out.println("Now proceeding to do the following - Decryption.");
+		        	thirdStage = true;
+		        	}
+		        	else {
+	                    System.out.println("Could not execute stage 3. Part 1. ");
+	                }
+		        	
+		        } catch (Exception e) {
+		            System.out.println("Could not execute stage 3.");
+		            encryptionPreference.next(); // Clear invalid input
+		        }	        	
+	        }	
+	        
+	        
+	        
+	        
+	        
+	        
 	        String encryptedMessage = encrypt(fileText, shiftKeys);
 	        System.out.println("Encrypted message is as follows:" + encryptedMessage);    
 	        
@@ -175,6 +203,35 @@ public class encryption {
 	        
 	        //3.2 De-cryption: https://www.youtube.com/watch?v=ZNRd_Yb9Ujw
 	        String decryptedMessage = decrypt(fileText, shiftKeys);
+	        System.out.println("decrypted message is as follows:" + decryptedMessage );
+	        
+	        //Step 4.2
+	        breakLineMethod();
+	        try {
+	            File saveObj = new File("C:\\Users\\JC\\Documents\\Programming Projects\\Basic-File-Encryption-Decryption\\files\\decrypted.txt");
+	            if (saveObj.createNewFile()) {
+	              System.out.println("File created: " + saveObj.getName());
+	            } else {
+	              System.out.println("File already exists.");
+	            }
+	          } catch (IOException e) {
+	            System.out.println("An error occurred. The file could not be created.");
+	            e.printStackTrace();
+	          }
+	        
+	        //Step 5.2
+	        breakLineMethod();
+	        try {
+	        	//("C:\\Users\\JC\\Documents\\Programming Projects\\Basic-File-Encryption-Decryption\\files\\filename.txt");
+	            FileWriter myWriter = new FileWriter("C:\\Users\\JC\\Documents\\Programming Projects\\Basic-File-Encryption-Decryption\\files\\decrypted.txt");
+	            myWriter.write(decryptedMessage); //Replace this with the encryption method in step 3. This needs to be appended.
+	            myWriter.close();
+	            System.out.println("Successfully wrote to the file.");
+	            System.out.println("Program is now finished.");
+	          } catch (IOException e) {
+	            System.out.println("An error occurred. The file could not be written to.");
+	            e.printStackTrace();
+	          }
 
 	    } // End of MAIN method
 	   
