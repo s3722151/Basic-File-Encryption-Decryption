@@ -82,3 +82,6 @@ Added the encryption method
 Added the decryption method.
 Created and moved the decryption and encryption main method code in a while statement. 
 This ensures it is only executed based on step 2.
+
+11/12/2024
+Should be done with the project. Asking ChatGPT how to handle errors and if the user wanted to select the file manually.
